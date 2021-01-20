@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { TodoProvider } from './Todo.Context'
+import Header from './components/Header'
+import TodoInput from './components/TodoInput'
+import TodoList from './components/ListTodos.jsx'
+import 'bulma/css/bulma.min.css'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TodoProvider>
+      <Header />
+      <div style={{ maxWidth: "500px", margin: "20px auto" }}>
+        <TodoInput />
+        <TodoList />
+      </div>
+    </TodoProvider>
   );
 }
 
